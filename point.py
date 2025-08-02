@@ -1,8 +1,11 @@
 class Point:
-    def __init__(self, x, y):
-        self._x = x 
-        self._y = y
-
+    def __init__(self, x=0.0, y=0.0):
+        if isinstance (x,Point):
+            self._x = x._x
+            self._y = x._y
+        else:
+            self._x = x 
+            self._y = y
     # === Property for x ===
     @property
     def x(self):
@@ -49,3 +52,4 @@ class Point:
     # === Show Method ===
     def show(self):
         print(self.__str__())
+
