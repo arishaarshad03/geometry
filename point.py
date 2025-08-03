@@ -43,7 +43,7 @@ class Point:
 
     # === String Representation ===
     def __str__(self):
-        return f"Point(x={self.x}, y={self.y})"
+        return f"(x={self.x}, y={self.y})"
 
     # === Operator Overload (+) ===
     def __add__(self, other):
@@ -53,3 +53,12 @@ class Point:
     # === Show Method ===
     def show(self):
         print(self.__str__())
+
+    def __repr__(self):
+        return f"Point(x={self._x}, y={self._y})"
+    
+    def __eq__(self, otherPoint):
+        return isinstance(otherPoint, Point) and self.x==otherPoint.x and self.y==otherPoint.y
+
+    def distance (self,other):
+        return ((other.x - self.x)**2 + (other.y - self.y)**2)**0.5
