@@ -1,1 +1,0 @@
-canvas.add_lines(p3,p4)
